@@ -3,7 +3,6 @@ package com.locafy.local.projects.services;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.locafy.local.projects.beans.Scene;
 import com.locafy.local.projects.repositories.SceneRepository;

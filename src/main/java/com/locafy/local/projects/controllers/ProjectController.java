@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import com.locafy.local.projects.beans.Project;
 import com.locafy.local.projects.beans.Scene;
 import com.locafy.local.projects.services.ProjectServiceImpl;
@@ -104,6 +102,8 @@ public class ProjectController {
 					.status(HttpStatus.CREATED)
 					.body(new HashMap<String, Object>(){{
 						put("message", "Project successfuly saved with ID: "  + newProject.getId());
+						put("id", newProject.getId());
+						put("title", newProject.getTitle());
 					}});
 		} catch (Exception e) {
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An error occurred while saving the project: " + e.getMessage());
